@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="row">
+    <div class="col bg-dark text-white" >
+        <a class="navbar-brand"> BASIC INTIMATES</a>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-3 p-2 ">
+            <!-- event
+binding that invokes the component’s changeCategory method when the button is clicked. No argument
+is provided to the method, which has the effect of setting the category to null and selecting all the
+products. -->
+            <button class="btn btn-block btn-outline-primary" (click)="changeCategory()">
+                Home
+            </button>
+            <!-- repeat
+the element for each value in the array returned by the component’s categories property. The button has
+a click event binding whose expression calls the changeCategory method to select the current category,
+which will filter the products displayed to the user. There is also a class binding, which adds the button
+element to the active class when the category associated with the button is the selected category. -->
+            <button *ngFor="let cat of categories"
+            class="btn btn-outline-primary btn-block"
+            [class.active]=" cat == selectedCategory" (click)="changeCategory(cat)">
+            {{ cat }}
+
+            </button>
+        </div>
+        <div class="col-9 p-2">
+
+            <!-- transforms the div element by duplicating it for each object returned by
+the component’s products property. -->
+            <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
+                <h4>
+                    {{ product.name }}
+                    <span class="badge badge-pill badge-primary float-right">
+                        {{ product.price | currency: "Ksh.":"symbol":"1.0-0"}}
+                    </span>
+                </h4>
+                <div class="card-text p-1 bg-white">{{ product.description}}</div>
+            </div>
+
+            <!-- The new elements add a select element that allows the size of the page to be changed and a set of
+        buttons that navigate through the product pages. The new elements have data bindings to wire them up to
+        the properties and methods provided by the component. -->
+            <div class="form-inline float-left mr-1">
+                <select class="form-control" [value]="productsPerPage"
+                (change)="changePageSize($any($event.target).value)">
+                <option value="3">3 per Page</option>
+                <option value="4">4 per Page</option>
+                <option value="6">6 per Page</option>
+                <option value="8">8 per Page</option>
+            </select>
+
+            </div>
+        </div>
+    </div>
+</div>
