@@ -49,5 +49,13 @@ export class StoreComponent {
     this.changePage(1);
   }
 
+  // calculates and returns the total number of pages based on the number of products available and the selected category. 
+  //This calculation is done by dividing the total number of products by the number of products per page, and rounding up the result to the nearest integer.
+  get pageCount(): number {
+    return Math.ceil(this.repository
+      .getProducts(this.selectedCategory).length / this.productsPerPage)
+
+  }
+
 
 }

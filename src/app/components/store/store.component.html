@@ -43,15 +43,25 @@ the component’s products property. -->
         buttons that navigate through the product pages. The new elements have data bindings to wire them up to
         the properties and methods provided by the component. -->
             <div class="form-inline float-left mr-1">
-                <select class="form-control" [value]="productsPerPage"
+             <select class="form-control" [value]="productsPerPage"
                 (change)="changePageSize($any($event.target).value)">
                 <option value="3">3 per Page</option>
                 <option value="4">4 per Page</option>
                 <option value="6">6 per Page</option>
                 <option value="8">8 per Page</option>
-            </select>
-
+             </select>
             </div>
+
+            <!-- creates a group of buttons that are used for navigating between pages. The *counter directive is used to 
+                repeat the button element for each page in the pageCount array, 
+                and the [class.active] attribute is used to dynamically highlight the currently selected button. -->
+            <div class="btn-group float-right">
+                <button *counter="let page of pageCount"
+                class="btn btn-outline-primary" [class.active]="page == selectedPage">
+                {{ page }}
+                </button>
+            </div>
+
         </div>
     </div>
 </div>
