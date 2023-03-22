@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cart } from 'src/app/models/cart.model';
 
 @Component({
   selector: 'app-cart-detail',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./cart-detail.component.css']
 })
 export class CartDetailComponent {
+  constructor(public cart: Cart){}
 
 }
