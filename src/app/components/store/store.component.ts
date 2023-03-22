@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Cart } from 'src/app/models/cart.model';
 import { Product } from 'src/app/models/product.model';
 import { ProductRepository } from 'src/app/models/product.repository';
 
@@ -12,7 +13,8 @@ export class StoreComponent {
   public productsPerPage = 4;
   public selectedPage = 1;
 
-  constructor(private repository: ProductRepository){}
+  constructor(private repository: ProductRepository,
+              private cart: Cart){}
 
 //a property called products returns an array of Product objects
 //when you access the products property, it will call getProducts on repository and return an array of Product objects.
@@ -55,6 +57,10 @@ export class StoreComponent {
     return Math.ceil(this.repository
       .getProducts(this.selectedCategory).length / this.productsPerPage)
 
+  }
+
+  addProductToCart(product: Product) {
+    this.cart.addLine(product);
   }
 
 

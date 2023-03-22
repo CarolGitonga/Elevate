@@ -1,9 +1,10 @@
 import { NgModule } from "@angular/core";
+import { Cart } from "../models/cart.model";
 import { ProductRepository } from "../models/product.repository";
 import { StaticDataSource } from "../models/static.datasource";
 
 @NgModule({
-    providers: [ProductRepository, StaticDataSource]
+    providers: [ProductRepository, StaticDataSource, Cart]
 })
 export class ProductModule{}
 
