@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Cart } from 'src/app/models/cart.model';
 import { Product } from 'src/app/models/product.model';
 import { ProductRepository } from 'src/app/models/product.repository';
@@ -14,7 +15,8 @@ export class StoreComponent {
   public selectedPage = 1;
 
   constructor(private repository: ProductRepository,
-              private cart: Cart){}
+              private cart: Cart,
+              private router: Router){}
 
 //a property called products returns an array of Product objects
 //when you access the products property, it will call getProducts on repository and return an array of Product objects.
@@ -61,6 +63,7 @@ export class StoreComponent {
 
   addProductToCart(product: Product) {
     this.cart.addLine(product);
+    this.router.navigateByUrl("/cart")//to navigate to the /cart URL.
   }
 
 
