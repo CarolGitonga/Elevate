@@ -3,16 +3,27 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { StoreComponent } from './components/store/store.component';
+import { StoreFirstGuard } from './storeFirst.guard';
 
 
 const routes: Routes = [
-  { path:"store", component: StoreComponent},
-  { path:"cart", component: CartDetailComponent},
-  { path:"checkout", component: CheckoutComponent},
+  { 
+    path:"store", component: StoreComponent,
+    canActivate: [StoreFirstGuard]
+  },
+  {
+     path:"cart", component: CartDetailComponent,
+     canActivate: [StoreFirstGuard]
+    },
+  { 
+    path:"checkout", component: CheckoutComponent,
+    canActivate: [StoreFirstGuard]
+  },
   { path:"**", redirectTo: "/store"},
 ];
 
 @NgModule({
+  providers: [StoreFirstGuard],
   imports: [RouterModule.forRoot(routes),
             
             ],
