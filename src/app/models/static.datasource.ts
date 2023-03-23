@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Product } from "./product.model";
 import { Observable, from } from "rxjs"; //Handling Orders
+import { Order } from "./order.model";
 //import { Order } from "./order.model";
 
 //The StaticDataSource class defines a method called getProducts, which returns the dummy data.
@@ -30,11 +31,11 @@ export class StaticDataSource {
         return from([this.products]);
     }
 
-    //saveOrder(order: Order): Observable<Order>{
-        //console.log(JSON.stringify(order));
-        //return from([order])
+    saveOrder(order: Order): Observable<Order>{
+        console.log(JSON.stringify(order));
+        return from([order])
 
-    //}
+    }
 }
 //To prepare for the transition from dummy to real data, I am going to feed the application data using a data source.
 //The rest of the application won’t know where the data is coming from, which will make the switch to getting data using HTTP requests seamless.
