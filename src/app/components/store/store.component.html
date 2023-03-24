@@ -23,7 +23,10 @@ element to the active class when the category associated with the button is the 
             class="btn btn-outline-primary btn-block"
             [class.active]=" cat == selectedCategory" (click)="changeCategory(cat)">
             {{ cat }}
+            </button>
 
+            <button class="btn btn-block btn-danger mt-5" routerLink="/admin">
+                Admin
             </button>
         </div>
         <div class="col-9 p-2">
