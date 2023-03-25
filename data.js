@@ -1,13 +1,13 @@
 module.exports = function () {
     return { 
         products: [
-            { id: 1, name: "shapewear", category: "Lingerie", 
+            { id: 1, name: "Shapewear", category: "Lingerie", 
                 description: "Your dream figure is just one shapewear away", price: 3800 },
             { id: 2, name: "Cover Ups", category: "Swim wear", 
                 description: "Cover ups are a stylish way for your body to get some sun protection while still getting that great sun-kissed glow.",price: 3000 },
             { id: 3, name: "Pajama Sets", category: "Sleep wear", 
                 description: "Soft, warm and cosy = Freedom!", price: 2500 },
-            { id: 4, name: "bralettes", category: "Braccesories", 
+            { id: 4, name: "Bralettes", category: "Braccesories", 
                 description: "If you're gonna be anything, be stylish in our bras", 
                 price: 600 },
             { id: 5, name: "Bra-extenders", category: "Braccesories", 
