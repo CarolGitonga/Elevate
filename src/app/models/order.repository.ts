@@ -28,7 +28,7 @@ export class OrderRepository {
         return this.dataSource.saveOrder(order)
     }
 
-    updateOrders(order: Order) {
+    updateOrder(order: Order) {
         this.dataSource.updateOrder(order)
         .subscribe(order => {
             this.orders.splice(this.orders
