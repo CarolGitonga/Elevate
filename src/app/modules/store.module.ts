@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { CartDetailComponent } from "../components/cart-detail/cart-detail.component";
 import { CartSummaryComponent } from "../components/cart-summary/cart-summary.component";
 import { CheckoutComponent } from "../components/checkout/checkout.component";
+import { NavbarComponent } from "../components/navbar/navbar.component";
 import { StoreComponent } from "../components/store/store.component";
 import { CounterDirective } from "../directives/counter.directive";
 import { ProductModule } from "./product.module";
@@ -22,11 +23,14 @@ import { ProductModule } from "./product.module";
                    CounterDirective, 
                    CartSummaryComponent,
                    CartDetailComponent,
-                   CheckoutComponent
+                   CheckoutComponent,
+                   NavbarComponent
+                   
                 ],
     exports: [StoreComponent,
               CartDetailComponent,
-              CheckoutComponent
+              CheckoutComponent,
+              NavbarComponent
 
     ]
 })

@@ -1,0 +1,13 @@
+
+.navbar-brand {
+    background-color: #FF5100;
+    width: 12%;
+    text-align: center;
+    
+}
+input[placeholder=Search] {
+    color: #FF5100;
+    box-sizing: border-box;
+  }
+
+  

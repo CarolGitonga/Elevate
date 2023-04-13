@@ -1,18 +1,18 @@
 <div class="container-fluid">
-    <div class="row">
+    <!-- <div class="row">
     <div class="col bg-dark text-white" >
         <a class="navbar-brand"> BASIC INTIMATES</a>
         <app-cart-summary></app-cart-summary>
     </div>
-    </div>
+    </div> -->
     <div class="row">
-        <div class="col-3 p-2 ">
+        <div class="col-3 p-2 " >
             <!-- event
 binding that invokes the component’s changeCategory method when the button is clicked. No argument
 is provided to the method, which has the effect of setting the category to null and selecting all the
 products. -->
-            <button class="btn btn-block btn-outline-primary" (click)="changeCategory()">
-                Home
+            <button class="btn btn-block btn-outline-primary" style="color:#FF5100 ;"  (click)="changeCategory()">
+                Shop
             </button>
             <!-- repeat
 the element for each value in the array returned by the component’s categories property. The button has
@@ -21,11 +21,11 @@ which will filter the products displayed to the user. There is also a class bind
 element to the active class when the category associated with the button is the selected category. -->
             <button *ngFor="let cat of categories"
             class="btn btn-outline-primary btn-block"
-            [class.active]=" cat == selectedCategory" (click)="changeCategory(cat)">
+            [class.active]=" cat == selectedCategory" style="color:#FF5100 ;" (click)="changeCategory(cat)">
             {{ cat }}
             </button>
 
-            <button class="btn btn-block btn-danger mt-5" routerLink="/admin">
+            <button class="btn btn-block btn-danger mt-5" style="background-color: #FF5100;" routerLink="/admin">
                 Admin
             </button>
         </div>
